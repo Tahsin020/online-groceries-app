@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:online_groceries_app/product/color/app_color.dart';
 import 'package:online_groceries_app/view/authentication/splash/view/splash_view.dart';
 
@@ -16,9 +17,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColor.whiteAsHeaven,
-
-      ),
+          appBarTheme: const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.light),
+          scaffoldBackgroundColor: AppColor.whiteAsHeaven,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              textStyle: const TextStyle(color: Colors.white, fontSize: 18),
+              primary: AppColor.glen,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
+            ),
+          )),
       home: const SplashView(),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:online_groceries_app/product/color/app_color.dart';
 import 'package:online_groceries_app/product/widget/button/custom_button.dart';
 import 'package:online_groceries_app/view/authentication/sign_up/view/sign_up_view.dart';
 
@@ -39,7 +38,7 @@ class _OnBordingViewState extends State<OnBordingView> {
                       Text(
                         "Welcome",
                         style: Theme.of(context).textTheme.headline3?.copyWith(
-                              color: AppColor.white,
+                              color: Theme.of(context).colorScheme.onPrimary,
                             ),
                         textAlign: TextAlign.center,
                       ),
@@ -55,7 +54,7 @@ class _OnBordingViewState extends State<OnBordingView> {
                         style: Theme.of(context)
                             .textTheme
                             .headline6
-                            ?.copyWith(color: const Color(0xffb3fcfcfc), fontSize: 16, fontWeight: FontWeight.normal),
+                            ?.copyWith(color: const Color(0xfffcfcfc), fontSize: 16, fontWeight: FontWeight.normal),
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                       CustomButton(

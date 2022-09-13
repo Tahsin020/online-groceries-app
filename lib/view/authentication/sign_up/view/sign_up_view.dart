@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:online_groceries_app/product/color/app_color.dart';
 import 'package:online_groceries_app/product/constant/image_enum.dart';
 
 class SignUpView extends StatefulWidget {
@@ -25,6 +23,7 @@ class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
@@ -32,20 +31,17 @@ class _SignUpViewState extends State<SignUpView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(100.0),
+                padding: const EdgeInsets.only(bottom: 100),
                 child: Center(child: ImageEnums.colors_carrot.toImage),
               ),
               Text(
                 "Sign Up",
-                style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 26,
-                    ),
+                style: Theme.of(context).textTheme.subtitle2,
               ),
-              Text("Enter your credentials to continue",
-                  style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                        color: const Color(0xff7c7c7c),
-                      )),
+              Text(
+                "Enter your credentials to continue",
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
               const SizedBox(
                 height: 40,
               ),
@@ -55,10 +51,7 @@ class _SignUpViewState extends State<SignUpView> {
                 keyboardAppearance: Brightness.light,
                 decoration: InputDecoration(
                   labelText: "Username",
-                  labelStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: const Color(0xff7c7c7c),
-                        fontSize: 16,
-                      ),
+                  labelStyle: Theme.of(context).textTheme.subtitle1,
                 ),
               ),
               TextField(
@@ -73,26 +66,19 @@ class _SignUpViewState extends State<SignUpView> {
                     }
                   },
                   decoration: InputDecoration(
-                    suffixIcon: _emailContains
-                        ? Icon(
-                            Icons.check,
-                            color: Colors.green,
-                          )
-                        : null,
-                    labelText: "Email",
-                    labelStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
-                          color: const Color(0xff7c7c7c),
-                          fontSize: 16,
-                        ),
-                  )),
+                      suffixIcon: _emailContains
+                          ? Icon(
+                              Icons.check,
+                              color: Colors.green,
+                            )
+                          : null,
+                      labelText: "Email",
+                      labelStyle: Theme.of(context).textTheme.subtitle1)),
               TextField(
                   controller: _passwordController,
                   decoration: InputDecoration(
                     labelText: "Password",
-                    labelStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
-                          color: const Color(0xff7c7c7c),
-                          fontSize: 16,
-                        ),
+                    labelStyle: Theme.of(context).textTheme.subtitle1,
                   )),
             ],
           ),

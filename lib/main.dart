@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           error: Colors.red,
           onError: Colors.redAccent,
           surface: Color(0xff7c7c7c),
-          onSurface: Colors.grey,
+          onSurface: Color(0xff4c4f4d),
           background: Colors.white,
           onBackground: Color(0xFFFCFCFC),
           brightness: Brightness.light,
@@ -43,6 +43,12 @@ class MyApp extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
           ),
         ),
+        inputDecorationTheme: const InputDecorationTheme(
+          labelStyle: TextStyle(
+              color: Color(0xff7c7c7c),
+              fontSize: 16,
+            ),  
+        ),
         textTheme: const TextTheme(
             subtitle1: TextStyle(
               color: Color(0xff7c7c7c),
@@ -56,7 +62,9 @@ class MyApp extends StatelessWidget {
             headline2: TextStyle(color: Colors.white),
             headline3: TextStyle(color: Colors.white),
             headline4: TextStyle(),
-            headline5: TextStyle(),
+            headline5: TextStyle(
+              color: Colors.black, fontSize: 18
+            ),
             headline6: TextStyle(
               color: Color(0xfffcfcfc),
               fontSize: 16,

@@ -37,14 +37,12 @@ class _OnBordingViewState extends State<OnBordingView> {
                       ),
                       Text(
                         "Welcome",
-                        style: Theme.of(context).textTheme.headline3?.copyWith(
-                              color: Theme.of(context).colorScheme.onPrimary,
-                            ),
+                        style: Theme.of(context).textTheme.headline3,
                         textAlign: TextAlign.center,
                       ),
                       Text(
                         "to our store ",
-                        style: Theme.of(context).textTheme.headline3?.copyWith(color: Colors.white),
+                        style: Theme.of(context).textTheme.headline3,
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.01,
@@ -54,7 +52,6 @@ class _OnBordingViewState extends State<OnBordingView> {
                         style: Theme.of(context)
                             .textTheme
                             .headline6
-                            ?.copyWith(color: const Color(0xfffcfcfc), fontSize: 16, fontWeight: FontWeight.normal),
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                       CustomButton(

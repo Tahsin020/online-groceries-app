@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             textStyle: const TextStyle(color: Colors.white, fontSize: 18),
-            primary: Theme.of(context).primaryColor,
+            primary: const Color(0xff53B175),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
           ),
         ),
@@ -51,6 +51,16 @@ class MyApp extends StatelessWidget {
             subtitle2: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 26,
+            ),
+            headline1: TextStyle(),
+            headline2: TextStyle(color: Colors.white),
+            headline3: TextStyle(color: Colors.white),
+            headline4: TextStyle(),
+            headline5: TextStyle(),
+            headline6: TextStyle(
+              color: Color(0xfffcfcfc),
+              fontSize: 16,
+              fontWeight: FontWeight.normal,
             )),
       ),
       home: const SplashView(),

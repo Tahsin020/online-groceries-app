@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:online_groceries_app/product/constant/image_enum.dart';
-import 'package:online_groceries_app/product/constant/project_padding.dart';
-import 'package:online_groceries_app/product/widget/card/groceries_card.dart';
-import 'package:online_groceries_app/product/widget/textfield/search_text_field.dart';
+import 'package:online_groceries_app/view/account/view/account_view.dart';
+import 'package:online_groceries_app/view/cart/view/cart_view.dart';
+import 'package:online_groceries_app/view/explore/view/explore_view.dart';
+import 'package:online_groceries_app/view/favourite/view/favourite_view.dart';
+import 'package:online_groceries_app/view/shop/view/shop_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -12,65 +14,43 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final TextEditingController _searchTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(width: 30, child: ImageEnums.carrot.carrotToImage),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.place,
-                    color: Theme.of(context).colorScheme.onSurface,
+    return DefaultTabController(
+        length: 5,
+        child: Scaffold(
+          bottomNavigationBar: BottomAppBar(
+            clipBehavior: Clip.hardEdge,
+            notchMargin: 10,
+            child: TabBar(
+                indicatorPadding: const EdgeInsets.all(10),
+                indicatorColor: Theme.of(context).primaryColor,
+                automaticIndicatorColorAdjustment: true,
+                splashBorderRadius: BorderRadius.circular(40),
+                tabs: const [
+                  Tab(
+                    text: 'Shop',
+                    icon: Icon(Icons.add_shopping_cart_outlined),
                   ),
-                  Text(
-                    "Dhaka, Banassre",
-                    style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                        fontSize: 18, fontWeight: FontWeight.w600, color: Theme.of(context).colorScheme.onSurface),
+                  Tab(
+                    text: 'Explore',
+                    icon: Icon(Icons.explore_outlined),
                   ),
-                ],
-              )
-            ],
+                  Tab(
+                    text: 'Cart',
+                    icon: Icon(Icons.shopping_cart),
+                  ),
+                  Tab(
+                    text: 'Favourite',
+                    icon: Icon(Icons.favorite_border_outlined),
+                  ),
+                  Tab(
+                    text: 'Account',
+                    icon: Icon(Icons.manage_accounts_outlined),
+                  ),
+                ]),
           ),
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const ProjectPadding.allLow(),
-            child: Column(
-              children: [
-                SearchTextField(searchController: _searchTextController),
-                Padding(
-                  padding: const ProjectPadding.allVertical(),
-                  child: Card(
-                    child: ImageEnums.card_banner.toImage,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Exclusive Offer",
-                      style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                            fontSize: 24,
-                          ),
-                    ),
-                    TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "See all",
-                          style: Theme.of(context).textTheme.headline6?.copyWith(color: Theme.of(context).primaryColor),
-                        )),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          body: TabBarView(children: [ShopView(), ExploreView(), CartView(), FavouriteView(), AccountView()]),
         ));
   }
 }

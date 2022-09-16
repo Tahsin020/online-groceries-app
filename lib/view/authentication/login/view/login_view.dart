@@ -4,9 +4,9 @@ import 'package:online_groceries_app/product/constant/project_padding.dart';
 import 'package:online_groceries_app/product/widget/button/custom_button.dart';
 import 'package:online_groceries_app/product/widget/textfield/email_text_field.dart';
 import 'package:online_groceries_app/product/widget/textfield/password_text_field.dart';
-import 'package:online_groceries_app/view/home/view/home_view.dart';
-
 import '../../../../product/constant/image_enum.dart';
+import '../../../home/view/home_view.dart';
+import '../../../shop/view/shop_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);

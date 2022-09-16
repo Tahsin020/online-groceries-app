@@ -88,7 +88,13 @@ class _SignUpViewState extends State<SignUpView> {
     );
   }
 
-  Widget _signUpButton() => CustomButton(onPressed: () {}, title: _signUp);
+  Widget _signUpButton() => CustomButton(onPressed: () {
+    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginView(),
+                        ));
+  }, title: _signUp);
 
   Widget _agreeText(BuildContext context) {
     return RichText(

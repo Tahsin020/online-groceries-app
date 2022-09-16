@@ -45,9 +45,21 @@ class MyApp extends StatelessWidget {
         ),
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(
-              color: Color(0xff7c7c7c),
-              fontSize: 16,
-            ),  
+            color: Color(0xff7c7c7c),
+            fontSize: 16,
+          ),
+        ),
+        tabBarTheme: TabBarTheme(
+          labelColor: const Color(0xff53B175),
+          unselectedLabelColor: Colors.black,
+          indicator: BoxDecoration(
+            borderRadius: BorderRadius.circular(40),
+          ),
+          labelPadding: const EdgeInsets.all(8),
+        ),
+        bottomAppBarTheme: const BottomAppBarTheme(
+          shape: AutomaticNotchedShape(RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25)))),
         ),
         textTheme: const TextTheme(
             subtitle1: TextStyle(
@@ -58,13 +70,11 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontSize: 26,
             ),
-            headline1: TextStyle(),
+            headline1: TextStyle(color: Colors.black, fontSize: 26),
             headline2: TextStyle(color: Colors.white),
             headline3: TextStyle(color: Colors.white),
             headline4: TextStyle(),
-            headline5: TextStyle(
-              color: Colors.black, fontSize: 18
-            ),
+            headline5: TextStyle(color: Colors.black, fontSize: 18),
             headline6: TextStyle(
               color: Color(0xfffcfcfc),
               fontSize: 16,

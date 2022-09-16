@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries_app/product/constant/image_enum.dart';
 import 'package:online_groceries_app/product/constant/project_padding.dart';
-import 'package:online_groceries_app/product/widget/card/custom_card.dart';
+import 'package:online_groceries_app/product/widget/card/groceries_card.dart';
 import 'package:online_groceries_app/product/widget/textfield/search_text_field.dart';
 
 class HomeView extends StatefulWidget {
@@ -68,8 +68,6 @@ class _HomeViewState extends State<HomeView> {
                         )),
                   ],
                 ),
-                CustomCard(),
-
               ],
             ),
           ),

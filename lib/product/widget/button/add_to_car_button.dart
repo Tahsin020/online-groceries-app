@@ -16,7 +16,10 @@ class _AddToCarButtonState extends State<AddToCarButton> {
       child: Container(
         height: 45,
         width: 45,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(17), color: Theme.of(context).primaryColor),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(17),
+          color: Theme.of(context).primaryColor,
+        ),
         child: Icon(
           Icons.add,
           color: Theme.of(context).colorScheme.onPrimary,

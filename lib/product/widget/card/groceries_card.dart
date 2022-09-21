@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:online_groceries_app/product/constant/image_enum.dart';
-import 'package:online_groceries_app/product/constant/project_padding.dart';
 import 'package:online_groceries_app/product/widget/button/add_to_car_button.dart';
 
 class GroceriesCard extends StatefulWidget {
-  const GroceriesCard({Key? key}) : super(key: key);
+  const GroceriesCard({Key? key, required this.title, required this.subTitle, required this.unitPrice, this.onTap, required this.imgPath}) : super(key: key);
+  final String title;
+  final String subTitle;
+  final String unitPrice;
+  final Function()? onTap;
+  final String imgPath;
 
   @override
   _GroceriesCardState createState() => _GroceriesCardState();
@@ -20,16 +23,16 @@ class _GroceriesCardState extends State<GroceriesCard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ImageEnums.banana.toImage,
+            Image.network(widget.imgPath),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Organic Banana",
+                  widget.title,
                   style: Theme.of(context).textTheme.headline5,
                 ),
                 Text(
-                  "7pcs,Priceg",
+                  widget.subTitle,
                   textAlign: TextAlign.start,
                 ),
               ],
@@ -37,9 +40,9 @@ class _GroceriesCardState extends State<GroceriesCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("€ 4.99"),
+                Text(widget.unitPrice),
                 AddToCarButton(
-                  onTap: () {},
+                  onTap: widget.onTap,
                 )
               ],
             )
